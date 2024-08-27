@@ -1,12 +1,86 @@
 :root {
-    --color-heading: #0B0D19;
-    --color-body: #677386;
-    --color-bg-button: #3D7BFA;
-    --color-text-button: #FFF;
+  --color-heading: #0b0d19;
+  --color-body: #677386;
+  --color-bg-button: #3d7bfa;
+  --color-text-button: #fff;
 
-    /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
-    --hide-overlay: 0;
+  /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
+  --hide-overlay: 1;
 }
 
-
 /* Begynd her... */
+body {
+  padding-top: 50px;
+}
+
+main {
+  display: flex;
+  gap: 50px;
+  padding-inline: 50px;
+}
+
+#text_box,
+#picture_box {
+  flex: 1 1 250px;
+}
+
+#text_box * {
+  margin: 40px 0;
+}
+
+#text_box h1 {
+  color: var(--color-heading);
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+#text_box p {
+  color: var(--color-body);
+}
+
+#text_box a {
+  background-color: var(--color-bg-button);
+  color: var(--color-text-button);
+  border-radius: 50px;
+  padding: 15px 20px;
+  text-decoration: none;
+}
+
+#picture_box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 15px;
+}
+
+#picture_box img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+#picture_box :first-child {
+  grid-area: 1 / 2 / 3/ 3;
+}
+
+#picture_box :nth-child(2) {
+  grid-area: 2/ 1 / 2 / 1;
+}
+#picture_box :nth-child(3) {
+  grid-area: 2/ 2 / 4 / 3;
+}
+
+#picture_box :nth-child(4) {
+  grid-area: 2/ 3 / 3 / 4;
+}
+
+#picture_box :nth-child(5) {
+  grid-area: 3/ 1 / 4 / 2;
+}
+
+#picture_box :nth-child(6) {
+  grid-area: 3/ 3 / 4 / 4;
+}
+
+#picture_box :last-child {
+  grid-area: 4/ 2 / 5 / 3;
+}
