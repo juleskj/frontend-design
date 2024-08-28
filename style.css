@@ -43,7 +43,7 @@ article {
 
   img {
     border: 1px solid #dadceb;
-    border-radius: 0.5rem;
+    border-radius: 0.5rem 0.5rem 0 0;
   }
 }
 
@@ -54,20 +54,22 @@ article {
 }
 
 .title {
-  font-family: "Abril Fatface", sans-serif;
-  font-weight: 400;
+  padding-top: 10px;
+  font-family: "Satoshi", sans-serif;
+  font-weight: bolder;
   font-size: 2rem;
+  color: rgb(21, 21, 21);
   /* color: #3c55cc; */
 }
 
 .location {
   color: #666d78;
-  text-transform: uppercase;
   font-size: 0.95em;
 }
 
 .description p {
-  text-align: center;
+  text-align: left;
+  line-height: 1.5;
 }
 
 .amenities-details {
@@ -81,7 +83,7 @@ article {
     place-items: center;
     padding: 0.25rem;
 
-    color: #666d78;
+    color: #3c55cc;
   }
 }
 
@@ -102,7 +104,7 @@ footer {
     border-radius: 8px;
     font-weight: 500;
     font: inherit;
-    background: #3c55cc;
+    background-color: #3c55cc;
     color: #f0f8ff;
   }
 
