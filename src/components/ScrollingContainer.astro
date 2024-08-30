@@ -1,8 +1,10 @@
 ---
 const { cardContent } = Astro.props;
+
+import "../styles/global.css";
 ---
 
-<ul class="full-width">
+<ul class="full-width scroll-element">
   {
     cardContent.map((card) => (
       <li>
@@ -16,5 +18,11 @@ const { cardContent } = Astro.props;
 <style>
   ul {
     list-style: none;
+  }
+
+  li {
+    background-color: gray;
+
+    border-radius: 10px;
   }
 </style>
