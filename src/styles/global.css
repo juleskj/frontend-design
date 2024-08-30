@@ -36,6 +36,11 @@
 
 :root {
   --content-width: 45rem;
+  --card-padding: 20px;
+  --card-gap: 1rem;
+  --card-border-radius: 1rem;
+  --card-background: rgb(173, 173, 173);
+  --card-text-color: rgb(32, 32, 32);
 }
 
 main {
@@ -61,7 +66,7 @@ main {
 
 .scroll-element {
   display: flex;
-  gap: 20px;
+  gap: var(--card-gap);
   scroll-snap-type: inline mandatory;
   overflow-x: scroll;
   list-style-type: none;
@@ -72,9 +77,10 @@ main {
     scroll-snap-stop: always;
 
     flex: 1 0 clamp(5rem, 65ch, 30rem);
-    background-color: gray;
-    border-radius: 20px;
-    padding: 20px;
+    background-color: var(--card-background);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    color: var(--card-text-color);
   }
 }
 
