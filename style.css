@@ -2,6 +2,7 @@ li,
 main,
 aside {
   /* Sæt container-type */
+  container-type: inline-size;
 }
 
 ul {
@@ -9,13 +10,31 @@ ul {
   gap: 1rlh;
   padding-block: 1rlh;
 
+  & article {
+    @container (wdith > 500px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      :nth-child(odd) img {
+        order: 1;
+      }
+    }
+  }
+
+  @container ( width > 700px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    :first-child {
+      grid-column: span 2;
+    }
+  }
+
   /* Tilføj container regel, når width > 700px */
   /* - Indstil 2 kolonner */
   /* - Sæt det første barn til `grid-column: span 2` */
 }
 
 article {
-  display: grid;
   gap: 1rlh;
   padding: 1rlh;
   background: #cceeff;
@@ -43,40 +62,6 @@ article {
     display: grid;
     grid-template-columns: 1fr 250px;
     gap: 1rlh;
-  }
-}
-
-main {
-  container-type: inline-size;
-}
-
-@container ( width < 500px) {
-  article {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  /* ul {
-    :nth-child(odd) img {
-      order: 1;
-    }
-  } */
-}
-
-/* Når `ul`-containerens bredde overstiger `700px`, skal du ændre layoutet:
-
-- Indstil `ul` til at vise to kolonner.
-- Sørg for, at det første barn spænder over begge kolonner ved at bruge `grid-column: span 2`. */
-
-@container (width > 700px) {
-  main ul {
-    container-type: inline-size;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    & :first-child {
-      grid-column: span 2;
-    }
   }
 }
 
