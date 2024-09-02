@@ -12,6 +12,7 @@
   display: grid;
   grid-template-columns: subgrid;
 
+  /* her skal alle de direkte børn er content være i den første column */
   > * {
     grid-column: 1 /2;
   }
@@ -23,6 +24,9 @@
   border-inline-start: 7px solid #4f48ed;
 }
 
+/* jeg vil gerne have hele billedet til at fylde begge rækker, men siden
+at vores rækker ikke er difineret, så bliver jeg nødt til at skeive
+1 / span 2, da der ikke er en -1 fordi der ikke er nogle rækker difineret*/
 img {
   grid-column: 2 / -1;
   grid-row: 1 / span 2;
